@@ -1,0 +1,396 @@
+﻿@section Scripts {
+    @Scripts.Render("~/Scripts/Script.js")
+
+
+
+
+
+}
+
+<style>
+    .active {
+        background-color: #4cff00;
+    }
+
+    .div {
+        background-color: #bceba5;
+    }
+
+</style>
+
+
+
+
+<div style="        background-color: rgba(175, 225, 151, 0.55)">
+
+
+
+    <div style="background-image: url('../../Scripts/image/jery.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        width: 100%;
+        height:600px; ">
+    </div>
+    <div style=" color: #000000; font-family: courier; ">
+        <h1> <strong>  MOVIEPLEX   </strong>    </h1>
+        <h2> <strong>No.1 CINEMA </strong>   </h2>
+    </div>
+    <p> User :&nbsp;&nbsp;&nbsp;<span id="userinfo">NOT SIGNED</span></p>
+    <div id="infoDiv">
+        <button id="account" class="btn btn-info btn-lg" name="">  YOUR ACCOUNT  </button>
+        <button id="logout" class="btn btn-info btn-lg"> LOG OUT </button>
+
+    </div>
+    <div id="loginRegisterDiv">
+
+        <button id="buttonLogin" class="btn-default"> LOG IN  </button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button id="buttonRegistration" class="btn-default"> REGISTER  </button> <br />
+
+    </div>
+    <div id="movieDiv">
+        <button id="buttonMovies" class="btn btn-info btn-block"> MOVIE   </button>
+    </div>
+    <div id="loginDiv">
+        <h3>LOGIN</h3>
+        <form action="post" method="post" id="formLogin" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2">  Username </label>
+                <input type="text" id="usernamePr" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Password </label>
+                <input type="password" id="lozPr" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2"></label>
+                <input type="submit" value="Login" />
+
+            </div>
+        </form>
+    </div>
+
+    <div id="registerDiv">
+        <h3>Register</h3>
+        <form action="post" method="post" id="formRegister" class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2">Username </label>
+                <input type="text" id="username" class="form-control" required />
+            </div><div class="form-group">
+                <label class="control-label col-sm-2"> Mail adress </label>
+                <input type="email" id="mailREG" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Password</label>
+                <input type="password" id="loz1REG" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Confirm password </label>
+                <input type="password" id="loz2REG" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2"></label>
+                <input type="submit" value="Register" class="form-control" />
+            </div>
+        </form>
+    </div>
+
+    <div id="tableProjectionWithSearch" style=" background-color: #bceba5">
+        <div id="search">
+            <p> </p>
+
+            <form action="post" method="post" id="formSearch" class="form-inline">
+                <div class="form-group">
+                    <label> MOVIE NAME</label><br />
+                    <input type="text" value="" id="movieName" />
+                </div>
+                <div class="form-group">
+                    <label>HALL</label><br />
+                    <input type="text" value="" id="hall" />
+                </div>
+                <div class="form-group">
+                    <label> DATE FROM </label><br />
+                    <input type="date" value="" id="date1" />
+                </div>
+                <div class="form-group">
+                    <label>DATE TO  </label><br />
+                    <input type="date" value="" id="date2" />
+                </div>
+                <div class="form-group">
+                    <label> PROJECTION TYPE </label><br />
+                    <input type="text" value="" id="projectionType" />
+                </div><br />
+                <div class="form-group">
+                    <label>PRICE FROM</label><br />
+                    <input type="number" value="" id="priceFrom" />
+                </div>
+                <div class="form-group">
+                    <label> PRICE TO </label><br />
+                    <input type="number" value="" id="priceTo" />
+                </div>
+
+
+                <button type="submit" id="buttonsearch" class="btn-default"> SEARCH  </button>
+            </form>
+            <p> </p>
+        </div>
+
+
+        <div id="projectionTable">
+
+        </div>
+        <div id="adminButton">
+
+            <button id="buttonAddProjection" class="btn-default"> ADD PROJECTION </button>
+            <button id="buttonUsers" class="btn-default">USERS  </button>
+        </div>
+        <div id="backDiv">
+            <button id="buttonBack"> BACK    </button>
+        </div>
+    </div>
+
+    <div id="pageMovieDiv">
+
+        <div id="movieData">
+
+        </div>
+        <div id="buttonMoviePage">
+            <button id="buttonBuyTicket">  BUY TICKET  </button>
+            <button id="buttonEditMovie"> UPDATE MOVIE   </button>
+            <button id="buttonDeleteMovie">  DELETE MOVIE </button>
+        </div>
+
+        <div id="backDiv">
+            <button id="buttonBack"> BACK    </button>
+        </div>
+    </div>
+    <div id="addProjectionDiv">
+
+
+        <h2> ADD PROJECTION   </h2>
+
+        <form action="post" method="post" id="formAddProjection">
+            <div class="form-group">
+                <label>DATE  and TIME </label><br />
+                <input type="datetime-local" value="" id="dateProjection" required />
+            </div>
+            <div class="form-group">
+                <label>TICKET PRICE</label><br />
+                <input type="number" value="" id="ticketPrice" required />
+            </div>
+            <div class="form-group" id="moviesDrop">
+                <label>MOVIE</label><br />
+                <select name="" id="movieId">
+                </select>
+
+            </div>
+            <div class="form-group" id="hallsDrop">
+                <label> HALL </label><br />
+                <select name="" id="projectionHall">
+                </select>
+
+            </div><br />
+            <div class="form-group" id="typsDrop">
+                <label>PROJECTION TYPE </label><br />
+                <select name="" id="projectionTypeAdd">
+                </select>
+
+            </div>
+
+            <button type="submit" id="addProjection" class="btn-default"> ADD PROJECTION  </button>
+
+        </form>
+        <div id="backDiv">
+            <button id="buttonBack"> BACK    </button>
+        </div>
+
+    </div>
+    <div id="pageAllMovieDiv">
+
+        <div id="tableMovies">
+
+        </div>
+        <div id="adminbuttonMovie">
+            <button id="buttonAddMovie"> ADD   Movie     </button>
+        </div>
+        <div id="addMovieDiv">
+            <form action="post" method="post" id="formAddMovie" class="form-inline">
+                <div class="form-group">
+                    <label> Movie Name</label><br />
+                    <input type="text" value="" id="nameAddMovie" required />
+                </div>
+                <div class="form-group">
+                    <label>Director</label><br />
+                    <input type="text" value="" id="directorMovie" required />
+                </div>
+                <div class="form-group">
+                    <label> Actor </label><br />
+                    <input type="text" value="" id="actorMovie" required />
+                </div>
+                <div class="form-group" id="filmDrop">
+                    <label>Genre</label><br />
+                    <select name="" id="genreMovie">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Time </label><br />
+                    <input type="number" value="" id="timeMovie" required />
+                </div><br />
+                <div class="form-group">
+                    <label> Distributor </label><br />
+                    <input type="text" value="" id="distributorMovie" required />
+                </div>
+                <div class="form-group">
+                    <label> Country </label><br />
+                    <input type="text" value="" id="countryMovie" required />
+                </div>
+                <div class="form-group">
+                    <label> Relase date</label><br />
+                    <input type="number" value="" id="relaseTimeMovie" required />
+                </div>
+                <div class="form-group">
+                    <label>Story</label><br />
+                    <input type="text" value="" id="storyMovie" required />
+                </div>
+                <button type="submit" id="addMovie" class="btn-default"> ADD   </button>
+            </form>
+        </div>
+        <div id="backDiv">
+            <button id="buttonBack"> BACK    </button>
+        </div>
+
+
+    </div>
+    <div id="pageUsersDiv">
+        <div id="tableUsers">
+
+        </div>
+        <div id="backDiv">
+            <button id="buttonBack"> BACK    </button>
+        </div>
+    </div>
+    <div id="pageUserDiv">
+
+        <div id="userData">
+
+        </div>
+        <div id="formChangeUserRole">
+
+            <form action="post" method="post" id="formRole" class="form-inline">
+
+                <div class="form-group" id="roleDropDiv">
+                    <label>SELECT NEW ROLE</label><br />
+                    <select name="" id="selectedRole">
+                        <option value="user">USER    </option>
+                        <option value="admin">ADMIN   </option>
+                    </select>
+                </div>
+
+                <button type="submit"  class="btn-default"> CHANGE  </button>
+
+
+            </form>
+        </div>
+        <div id="changePasswordDiv">
+            <form action="post" method="post" id="changePasswordform" class="form-horizontal">
+                <div class="form-group" id="lozinkaStara">
+                    <label class="control-label col-sm-2">OLD PASSWORD  </label>
+                    <input type="password" id="oldPassword" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">NEW PASSWORD </label>
+                    <input type="password" id="newPassword1" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2">REPEAT  NEW PASSWORD</label>
+                    <input type="password" id="newPassword2" class="form-control" required />
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2"></label>
+                    <input type="submit" value="CHANGE" />
+
+                </div>
+
+            </form>
+           
+        </div>
+        <div>
+            <hr />
+        </div>
+        <div id="buttonAdminUser" class="form-inline">
+            <button id="buttonPasswordChange"> CHANGE  PASSWORD (logged in users) </button>
+            <button id="buttonUserRoleChange"> CHANGE  ROLE  </button>
+            <button id="buttonDeleteUser">     DELETE USER  </button>
+        </div>
+        <hr />
+        <div id="tableUserTickets">
+
+        </div>
+        <div id="backDiv">
+            <button id="buttonBack"> BACK    </button>
+        </div>
+    </div>
+
+    <div id="pageProjectionDiv">
+        <div id="projectionData">
+
+        </div>
+        <div id="slobodnaMestaDiv">
+            <p id="brojSlobodihSedista"> </p>
+        </div>
+        <div id="KupiKartuProjekcija">
+            <button id="buttonKupiKartuProjekcija">  BUY TICKET   </button>
+
+        </div>
+        <div id="adminKorisnikProjekcije">
+            <button id="buttonDeleteProjection">  DELETE PROJECTION </button>
+            <div id="tableSoldTicket">
+
+            </div>
+        </div>
+        <div id="backDiv">
+            <button id="buttonBack"> BACK    </button>
+        </div>
+
+    </div>
+   
+
+    <div id="page2BuyTicket">
+        <div id="dataProjectionFaze2">
+
+        </div>
+        <div id="chooseSeat">
+
+        </div>
+        <div id="daljeKarta">
+            <button id="continue">CONTINUE   </button>
+        </div>
+        <div id="nazadKupljenaKarta">
+            <button id="backInvoice"> BACK    </button>
+        </div>
+    </div>
+    <div id="page3BuyTicket">
+
+        <div id="selectedSeatForTicket">
+
+        </div>
+
+
+        <div id="totalPrice">
+
+        </div>
+
+        <div id="buyDiv">
+            <button id="finallyBuy"> BUY   </button>
+        </div>
+        <div id="yourTickets">
+
+
+
+        </div>
+        <div id="nazadKupljenaKarta">
+            <button id="backInvoice"> BACK    </button>
+        </div>
+
+
+    </div>
+</div>
