@@ -16,8 +16,8 @@ $(document).ready(function () {
     var tableFor = "";
 
     var seats = ['A1', 'A2', 'A3', 'A4', 'A5', 'B1', 'B2', 'B3', 'B4', 'B5', 'C1', 'C2', 'C3', 'C4', 'C5'];
-    var brojslobodnihSedista = 0;
-    var ukupanBrojSedista = 15;
+    var numberAvailableTickets = 0;
+    var totalSeatsNumber = 15;
     var selectedSeat = [];
     var stringMovieId = 0;
     var stringHallId = 0;
@@ -1200,15 +1200,15 @@ $(document).ready(function () {
 
         }).done(function (data, status) {
             displaySoldTicketTable(data, status);
-            brojslobodnihSedista = ukupanBrojSedista - data.length;
-            $("#brojSlobodihSedista").html("BROJ SLOBODNIH SEDISTA  : " + brojslobodnihSedista.toString());
+            numberAvailableTickets = totalSeatsNumber - data.length;
+            $("#numberAvailableTickets").html("NUMBER OF AVALIABLE TICKETS    : " + numberAvailableTickets.toString());
 
         }).fail(function (data, status) {
             alert("desila se greska  prilikom  ucitavanja prodatih karatas !");
         })
 
     }
-    //==================================================================================podaci tabela  projekcije =============
+    //==========================================DISPLAY PROJECTION  =============
     function displayProjectionData(data, status) {
         var container = $("#projectionData");
         container.empty();
@@ -1233,7 +1233,7 @@ $(document).ready(function () {
         }
 
     }
-    //===========================================================================popuni tabelu prodate  karte za konkretnu projekciju ==========
+    //=======================================TABLE FOR SOLDED  TICKET  ==========
     function displaySoldTicketTable(data, status) {
         var container = $("#tableSoldTicket");
 
